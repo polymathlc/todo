@@ -1,0 +1,27 @@
+# Keeps the live site in step with main.
+# GitHub Pages serves the gh-pages branch; this copies main onto it after every merge.
+name: Publish to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Copy main to gh-pages
+        run: git push --force origin HEAD:refs/heads/gh-pages

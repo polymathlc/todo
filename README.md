@@ -2,11 +2,13 @@
 
 One page to run the day: a full to-do system plus calendar, habits, goals, money, journal, notes, fitness, a focus timer and a weekly review. Built for juggling Polymath Learning Centre, CC Collectibles, corporate AI training, family and health in one place.
 
+**Live site: https://polymathlc.github.io/todo/**
+
 Everything lives in a single file, `index.html`. No build step, no server, no account.
 
 ## Open it
 
-- **Any browser:** download `index.html` and open it, or serve the folder with any static host (GitHub Pages works).
+- **Any browser:** go to https://polymathlc.github.io/todo/, or download `index.html` and open it directly.
 - **Inside Claude:** the published Claude version saves privately to your Claude account and syncs between phone and computer. It also turns on the Claude buttons (see below).
 
 ## What's inside
@@ -71,6 +73,12 @@ When the page runs inside Claude, four helpers appear. Each asks permission the 
 - **Summarise my week** — a short read on the week plus three focus points for next week
 
 They stay hidden when the page is opened outside Claude.
+
+## Publishing
+
+GitHub Pages serves the `gh-pages` branch. After every merge to `main`, the **Publish to GitHub Pages** action copies `main` onto `gh-pages`, and the live site updates within a minute or two. `.nojekyll` tells Pages to serve the files as they are.
+
+The site address is public, but nothing personal is in the code: each visitor's entries stay in their own browser.
 
 ## Tech
 
